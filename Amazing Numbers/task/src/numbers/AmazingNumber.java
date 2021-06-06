@@ -9,10 +9,6 @@ public class AmazingNumber {
         this.value = number;
     }
 
-    AmazingNumber(long firstParameter, int secondParameter) {
-        this.value = firstParameter;
-    }
-
     AmazingNumber() {
     }
 }
