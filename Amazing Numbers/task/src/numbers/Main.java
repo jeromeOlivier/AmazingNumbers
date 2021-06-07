@@ -3,7 +3,7 @@ package numbers;
 public class Main {
 
     public static void main(String[] args) {
-        Control control = new Control();
+        ControlFlow control = new ControlFlow();
         control.welcomeUser();
         control.runAmazingNumbers();
     }
