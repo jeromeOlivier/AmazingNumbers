@@ -22,6 +22,8 @@ public class Print {
 		System.out.printf("%17s %-1s", (legal.evenName + ":"), currentNumber.even + "\n");
 		System.out.printf("%17s %-1s", (legal.oddName + ":"), !currentNumber.even + "\n");
 		System.out.printf("%17s %-1s", (legal.spyName + ":"), currentNumber.spy + "\n");
+		System.out.printf("%17s %-1s", (legal.sunnyName + ":"), currentNumber.sunny + "\n");
+		System.out.printf("%17s %-1s", (legal.squareName + ":"), currentNumber.square + "\n");
 	}
 
 	public void loopedResult(AmazingNumber currentNumber) {
@@ -34,6 +36,8 @@ public class Print {
 		if (currentNumber.even) { arrayList.add(legal.evenName); }
 		if (!currentNumber.even) { arrayList.add(legal.oddName); }
 		if (currentNumber.spy) { arrayList.add(legal.spyName); }
+		if (currentNumber.sunny) { arrayList.add(legal.sunnyName); }
+		if (currentNumber.square) { arrayList.add(legal.squareName); }
 		System.out.printf("%20s %-1s %-1s", currentNumber.value, "is", String.join(", ", arrayList) + "\n");
 	}
 
@@ -45,11 +49,12 @@ public class Print {
 
 	public void instructions() {
 		System.out.println("Supported requests:\n" +
-				"- enter a natural number to know its properties;\n" +
+				"- enter a natural number to know its properties; \n" +
 				"- enter two natural numbers to obtain the properties of the list:\n" +
 				"  * the first parameter represents a starting number;\n" +
 				"  * the second parameter shows how many consecutive numbers are to be printed;\n" +
 				"- two natural numbers and a property to search for;\n" +
+				"- two natural numbers and two properties to search for;\n" +
 				"- separate the parameters with one space;\n" +
 				"- enter 0 to exit.");
 	}
@@ -73,8 +78,31 @@ public class Print {
 
 	public void specialPropertyErrorMessage(String specialProperty) {
 		legal.nameList();
-		System.out.println("\nThe property [" + specialProperty.toUpperCase() + "] is wrong.\n" +
-				"Available properties: [" + (String.join(", ", legal.nameList)).toUpperCase() + "]");
+		System.out.println("\nThe property ["
+				+ specialProperty.toUpperCase()
+				+ "] is wrong.\n"
+				+ "Available properties: ["
+				+ (String.join(", ", legal.nameList)).toUpperCase()
+				+ "]");
+	}
+
+	public void mutuallyExclusiveErrorMessage(String firstSpecialProperty, String secondSpecialProperty) {
+		System.out.println("The request contains mutually exclusive properties: ["
+				+ firstSpecialProperty.toUpperCase() + ", "
+				+ secondSpecialProperty.toUpperCase() + "]\n" +
+				"There are no numbers with these properties.");
+	}
+
+	public void bothPropertyErrorMessage(String firstSpecialProperty, String secondSpecialProperty) {
+		legal.nameList();
+		System.out.println("\nThe properties ["
+				+ firstSpecialProperty.toUpperCase()
+				+ ", "
+				+ secondSpecialProperty.toUpperCase()
+				+ "] are wrong.\n"
+				+ "Available properties: ["
+				+ (String.join(", ", legal.nameList)).toUpperCase()
+				+ "]");
 	}
 
 }

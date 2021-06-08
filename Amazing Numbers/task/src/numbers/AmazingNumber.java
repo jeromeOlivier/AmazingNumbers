@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AmazingNumber {
 
-	boolean even, odd, buzz, duck, palindromic, gapful, spy;
+	boolean even, odd, buzz, duck, palindromic, gapful, spy, sunny, square;
 	long value;
 
 	String evenName = "even";
@@ -15,6 +15,8 @@ public class AmazingNumber {
 	String palindromicName = "palindromic";
 	String gapfulName = "gapful";
 	String spyName = "spy";
+	String sunnyName = "sunny";
+	String squareName = "square";
 
 	List<String> nameList = new ArrayList<>();
 
@@ -26,6 +28,8 @@ public class AmazingNumber {
 		nameList.add(palindromicName);
 		nameList.add(gapfulName);
 		nameList.add(spyName);
+		nameList.add(sunnyName);
+		nameList.add(squareName);
 	}
 
 	AmazingNumber(long number) {

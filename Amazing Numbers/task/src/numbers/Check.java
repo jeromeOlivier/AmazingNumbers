@@ -46,4 +46,15 @@ public class Check {
 		}
 		return (prod == sum);
 	}
+
+	public boolean ifNumberIsSunny(long number) {
+		long sunnyCandidate = number + 1;
+		double squareRoot = Math.sqrt(sunnyCandidate);
+		return squareRoot - Math.floor(squareRoot) == 0;
+	}
+
+	public boolean ifNumberIsSquare(long number) {
+		double squareRoot = Math.sqrt(number);
+		return squareRoot - Math.floor(squareRoot) == 0;
+	}
 }
